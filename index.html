@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+        <meta charset="utf-8">
+    <title>VERSO Aircon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.2.1/html5-qrcode.min.js"></script>
+
+    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://hr.verso.ac.th/images/favicon.png">
+    <script type="text/javascript" src="https://hr.verso.ac.th/js/app-global.js"></script>    
+    <link href="https://hr.verso.ac.th/css/login.css" rel="stylesheet">
+    <!-- <script src="proxy.js"></script> -->
+  <style>
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 1.0em;
+  font-family: sans-serif;
+  min-width: 63px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+  background-color: #009879;
+  padding: 1px 15px;
+  color: #ffffff;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+
+
+.post-embed {
+  border: 1px solid silver;
+  margin: 10px;
+  display: flex;
+  padding: 0px;
+  max-height: 150px;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.post-embed .post-embed-image {
+  margin: 0px;
+  padding: 0px;
+}
+
+.post-embed .post-embed-article {
+  margin: 0px;
+  padding: 20px;
+}
+
+.post-embed .post-embed-image img {
+  margin: 0px;
+  padding: 0px;
+}
+
+.post-embed-article-title a {
+  text-decoration: none;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.post-embed-article-title {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.post-embed-article-subtitle {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 75px;
+}
+
+#reader {
+  width: 450px;
+}
+@media(max-width: 600px) {
+  #reader {
+      width: 300px;
+  }
+}
+.empty {
+  display: block;
+  width: 100%;
+  height: 20px;
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+body {
+    padding-top: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120%;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #979797 !important;
+}
+
+
+  </style>
+<body>
+    <!-- <h1 id="msg"name="msg"></h1> -->
+    <H3 style="text-align: center;margin-bottom: 10px;" class="text-white">Qr-Scan Aircon</H3>
+    <div class="container">
+            <div class="content" style="margin-top:170px;">
+            <div class="row" style="margin-left: 0 !important;">
+                    <div class="row">
+                      <div class="col-md-12" style="text-align: center;margin-bottom: 10px;">
+    <form id="form" name="form">  
+                        <div  id="reader" ></div>
+                        <div id="scanned-result" ></div>
+                        
+                        <input id="myInput0" name="myInput0" type="text" value="" hidden/>
+                        <input id="myInput1" name="myInput1" type="text" value="" hidden/>
+                        <input id="myInput2" name="myInput2" type="text" value="" hidden/>
+                       
+                        <select name="input4" id="input4" class="form-select" aria-label="Default select example" style="width: 220px;    margin: auto;" required>
+                          <option selected disabled value="">ประเภทของการล้าง</option>
+                          <option value="ล้างย่อย">ล้างย่อย</option>
+                          <option value="ล้างใหญ่">ล้างใหญ่</option>
+                        </select>
+                        
+                        <select name="input5" id="input5" class="form-select" aria-label="Default select example" style="width: 220px;    margin: auto;" required>
+                          <option selected disabled value="">ผลดำการเนินงาน</option>
+                          <option value="สำเร็จ">สำเร็จ</option>
+                          <option value="ไม่สำเร็จ">ไม่สำเร็จ</option>
+                        </select>
+                        
+                        <div class="mb-3" style="width: 220px;    margin: auto;" >
+                          <textarea rows="3" style="width: 220px;    margin: auto;" class="form-control,"  name="input6" id="input6" rows="3" placeholder="หมายเหตุ"></textarea>
+                        </div>
+                        
+                        <!-- <div class="mb-3" style="width: 220px;    margin: auto;" >
+                          
+                           <input type="file" class="uploader text-white" required >
+                        </div> -->
+                        
+                        <div class="mb-3" style="width: 220px;    margin: auto;"> 
+                            <input type="text" class="form-control" name="input7" id="input7"  placeholder="ผู้บันทึก" required>
+                          </div>
+
+                        <div style="width: 200px;    margin: auto;">
+                          <button type="submit" class="btn btn-success" id="btn1" class="btn btn-primary" >SUBMIT</button>
+                          <button class="btn btn-primary" id="btn2" type="button" style="display:none" disabled >
+                            <span class="spinner-grow spinner-grow-sm" role="status" ></span>
+                            Loading...
+                          </button>
+                          </div>
+                          </form>
+                      </div>
+                    </div>
+            </div>
+        </div>
+    </div> <!-- /container -->
+    </form>
+    <script>
+function docReady(fn) {
+            // see if DOM is already available
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                // call on next available tick
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+        /** Ugly function to write the results to a table dynamically. */
+        function printScanResultPretty(codeId, decodedText, decodedResult) {
+          let resultSection = document.getElementById('scanned-result');
+            let tableBodyId = "scanned-result-table-body";
+            if (!document.getElementById(tableBodyId)) {
+                let table = document.createElement("table");
+                table.className = "styled-table";
+                table.style.width = "100%";
+                resultSection.appendChild(table);
+                let theader = document.createElement('thead');
+                let trow = document.createElement('tr');
+                // let th1 = document.createElement('td');
+                // th1.innerText = "Count";
+                let th2 = document.createElement('td');
+                th2.innerText = "Format";
+                let th3 = document.createElement('td');
+                // th3.innerText = "Result";
+                // trow.appendChild(th1);
+                // trow.appendChild(th2);
+                trow.appendChild(th3);
+                theader.appendChild(trow);
+                table.appendChild(theader);
+                let tbody = document.createElement("tbody");
+                tbody.id = tableBodyId;
+                table.appendChild(tbody);
+            }
+            let tbody = document.getElementById(tableBodyId);
+            let trow = document.createElement('tr');
+            let td1 = document.createElement('td');
+            td1.innerText = `${codeId}`;
+            let td2 = document.createElement('td');
+            td2.innerText = `${decodedResult.result.format.formatName}`;
+            let td3 = document.createElement('td');
+            td3.innerText = `${decodedText}`;
+            
+            console.log(decodedText)
+    
+            // trow.appendChild(td1);
+            // trow.appendChild(td2);
+            trow.appendChild(td3);
+            tbody.appendChild(trow);
+        }
+        docReady(function() {
+          hljs.initHighlightingOnLoad();
+          var lastMessage;
+          var codeId = 0;
+          var decodedText = "";
+          var msg1 = "";
+function onScanSuccess(decodedText, decodedResult) {
+                /**
+                 * If you following the code example of this page by looking at the
+                 * source code of the demo page - good job!!
+                 * 
+                 * Tip: update this function with a success callback of your choise.
+                 */
+            if (lastMessage !== decodedText) {
+              lastMessage = decodedText;
+                    printScanResultPretty(codeId, decodedText, decodedResult);
+                    ++codeId;
+                    msg = decodedText
+                    msg1 = msg.split("][").map(a=>a.replace(/\[|\]/g,""))
+                    // document.querySelector("#msg").innerHTML = msg1;
+                    console.log(msg1)
+                    var test0 = msg1[0] ;
+                    document.getElementById("myInput0").value = test0;
+                    var test1 = msg1[1] ;
+                    document.getElementById("myInput1").value = test1;
+                    var test2 = msg1[2] ;
+                    document.getElementById("myInput2").value = test2;
+            }
+          }
+          let html5QrcodeScanner = new Html5QrcodeScanner(
+                "reader", 
+                { 
+                    fps: 60,
+                    qrbox: { width: 240, height: 240 },
+                    // Important notice: this is experimental feature, use it at your
+                    // own risk. See documentation in
+                    // mebjas@/html5-qrcode/src/experimental-features.ts
+                    experimentalFeatures: {
+                        useBarCodeDetectorIfSupported: true
+                    },
+                    rememberLastUsedCamera: true
+                });
+          html5QrcodeScanner.render(onScanSuccess);
+        });
+
+
+
+
+    </script>
+
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxtyrj1OdSlXRfnBXikMzV1bs4LG-CPAIGThjRC-8DNfkbE_-JW4yB72LnJojf6ewwj/exec'
+  const form = document.forms['form']
+  form.addEventListener('submit', (e) => {
+    event.preventDefault()
+    $('#btn1').hide()
+    $('#btn2').show()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      // .then(response => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
+      .catch(error => console.error('Error!', error.message))
+      .then(data => {
+          //  console.log(msg1)
+              document.querySelector("form").reset()
+              document.getElementById("scanned-result").innerHTML = "";
+              //  document.querySelector("#msg").innerHTML = msg1;
+              $('#btn1').show()
+              $('#btn2').hide()
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'บันทึกข้อมูลเรียบร้อยแล้ว',
+                showConfirmButton: false,
+                timer: 1500
+              })
+          });
+  })
+</script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+ 
+</html>
